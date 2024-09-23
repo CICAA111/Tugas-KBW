@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak Kami</title>
+    <!-- Link ke CSS Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container mt-5">
+        <h1 class="text-center">Kontak Kami</h1>
+        <form action="#" method="post" class="mt-4">
+            <div class="form-group">
+                <label for="nama">Nama:</label>
+                <input type="text" id="nama" name="nama" class="form-control" style="width: 300px;">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" class="form-control" style="width: 300px;">
+            </div>
+
+            <div class="form-group">
+                <label>Jenis Kelamin:</label><br>
+                <div class="form-check form-check-inline">
+                    <input type="radio" id="laki-laki" name="jenis_kelamin" value="Laki-laki" class="form-check-input">
+                    <label for="laki-laki" class="form-check-label">Laki-laki</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" id="perempuan" name="jenis_kelamin" value="Perempuan" class="form-check-input">
+                    <label for="perempuan" class="form-check-label">Perempuan</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="hobby">Hobi:</label><br>
+                <div class="form-check">
+                    <input type="checkbox" id="hobi1" name="hobi1" value="bersepeda" class="form-check-input">
+                    <label for="hobi1" class="form-check-label">bersepeda</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" id="hobi2" name="hobi2" value="bermain biola" class="form-check-input">
+                    <label for="hobi2" class="form-check-label">bermain biola</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" id="hobi3" name="hobi3" value="roasting" class="form-check-input">
+                    <label for="hobi3" class="form-check-label">roasting</label>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="reset" class="btn btn-secondary">Reset</button>
+        </form>
+    </div>
+
+    <!-- Script Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.11/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
