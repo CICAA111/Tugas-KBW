@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak Kami</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Kontak Kami</h1>
+        <!-- Formulir ini menggunakan metode POST -->
+        <form action="konfirmasi.php" method="post">
+            <div class="form-group">
+                <label for="nama">Nama:</label>
+                <input type="text" id="nama" name="nama" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label>Jenis Kelamin:</label><br>
+                <div class="form-check form-check-inline">
+                    <input type="radio" id="laki-laki" name="jenis_kelamin" value="Laki-laki" class="form-check-input" required>
+                    <label class="form-check-label" for="laki-laki">Laki-laki</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" id="perempuan" name="jenis_kelamin" value="Perempuan" class="form-check-input" required>
+                    <label class="form-check-label" for="perempuan">Perempuan</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Hobby:</label><br>
+                <div class="form-check">
+                    <input type="checkbox" id="hobi1" name="hobi[]" value="bersepeda" class="form-check-input">
+                    <label class="form-check-label" for="hobi1">Bersepeda</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" id="hobi2" name="hobi[]" value="bermain biola" class="form-check-input">
+                    <label class="form-check-label" for="hobi2">Bermain Biola</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" id="hobi3" name="hobi[]" value="roasting" class="form-check-input">
+                    <label class="form-check-label" for="hobi3">Roasting</label>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="reset" class="btn btn-secondary">Reset</button>
+        </form>
+    </div>
+</body>
+</html>
