@@ -1,15 +1,38 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $gender = $_POST['gender'];
-    $birthdate = $_POST['birthdate'];
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "latihan";
 
-    // Calculate age
-    $birthdate_timestamp = strtotime($birthdate);
-    $current_date = new DateTime();
-    $birth_date = new DateTime($birthdate);
-    $age = $current_date->diff($birth_date)->y;
+// Membuat koneksi
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+// Cek koneksi
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+
+// Mengecek apakah form telah di-submit
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Mengambil data dari form
+    $name = mysqli_real_escape_string($conn, $_POST['name']);
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $gender = mysqli_real_escape_string($conn, $_POST['gender']);
+    $birthdate = mysqli_real_escape_string($conn, $_POST['birthdate']);
+
+    // Menyusun query untuk memasukkan data ke dalam tabel
+    $sql = "INSERT INTO biodata (nama, email, gender, ttl)
+    VALUES ('$name', '$email', '$gender', '$birthdate')";
+
+    // Mengeksekusi query dan mengecek apakah berhasil
+    if (mysqli_query($conn, $sql)) {
+        echo "Data baru berhasil dimasukkan!";
+    } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    }
+
+    // Menutup koneksi
+    mysqli_close($conn);
 }
 ?>
 
@@ -28,8 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <p>Nama: <?php echo htmlspecialchars($name); ?></p>
         <p>Email: <?php echo htmlspecialchars($email); ?></p>
         <p>Gender: <?php echo htmlspecialchars($gender); ?></p>
-        <p>Tanggal Lahir: <?php echo date('d F Y', $birthdate_timestamp); ?></p>
-        <p>Umur Kamu Saat Ini: <?php echo $age; ?> tahun</p>
+        <p>Tanggal Lahir: <?php echo date('d F Y', strtotime($birthdate)); ?></p>
     </div>
 </body>
 </html>
