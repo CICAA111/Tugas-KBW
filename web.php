@@ -48,3 +48,9 @@ Route::get('/web/contact', function () {
 Route::get('/now', [PageController::class, 'home'])->name('home');
 Route::get('/now', [PageController::class, 'about'])->name('about');
 Route::get('/now', [PageController::class, 'contact'])->name('contact');
+
+use App\Http\Controllers\HalController;  
+
+Route::get('/baru/home', [HalController::class, 'home'])->name('topmenu1_blade');  
+Route::get('/baru/about', [HalController::class, 'about'])->name('topmenu2_blade');  
+Route::get('/baru/contact', [HalController::class, 'contact'])->name('topmenu3_blade');
